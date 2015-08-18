@@ -1,8 +1,10 @@
 execute pathogen#infect()
 
-set laststatus=2
+set timeoutlen =50
+set laststatus =2
 
-let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts =1
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
