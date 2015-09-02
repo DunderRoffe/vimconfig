@@ -1,6 +1,6 @@
 execute pathogen#infect()
 
-set timeoutlen =50
+set timeoutlen =150
 set laststatus =2
 
 let g:airline_theme='solarized'
@@ -16,3 +16,15 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 set tabstop=2 shiftwidth=2 expandtab
+
+let mapleader = "<Space>"
+
+" Quicksave
+nnoremap <Leader>w :w<CR>
+
+" Quick copy and paste to/from system clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
