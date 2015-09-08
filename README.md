@@ -29,9 +29,9 @@ Initialize the vim plugins:
     git submodule --init --recursive
 ```
 
-Youcompleteme compilation
+YouCompleteMe compilation
 ```bash
-    ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
+    cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
 ```
 
 Maintain
