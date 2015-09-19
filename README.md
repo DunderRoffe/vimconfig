@@ -24,7 +24,7 @@ git submodule init
 
 Add the following to the top of ~/.vimrc
 ```bash
-echo "\n\n\" Old conf:" >> ~/vim/runtime-config/vimrc-global
+echo "\n\n\" Old conf:" >> ~/.vim/runtime-config/vimrc-global
 cat ~/.vimrc >> ~/.vim/runtime-config/vimrc-global
 echo "source ~/.vim/runtime-config/vimrc-global" > ~/.vimrc
 ```
