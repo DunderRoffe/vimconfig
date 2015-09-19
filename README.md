@@ -31,7 +31,7 @@ echo "source ~/.vim/runtime-config/vimrc-global" > ~/.vimrc
 
 YouCompleteMe compilation
 ```bash
-cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
+cd ~/.vim/bundle/YouCompleteMe/ && ./install.py && cd -
 ```
 
 Maintain
