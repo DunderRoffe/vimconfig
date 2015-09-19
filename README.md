@@ -17,16 +17,16 @@ Clone this repo in to your home folder and rename it to '.vim'
 git clone git@bitbucket.org:roffe/vimconfig.git ~/.vim
 ```
 
+Initialize the vim plugins:
+```bash
+git submodule init
+```
+
 Add the following to the top of ~/.vimrc
 ```bash
 echo "\n\n\" Old conf:" >> ~/vim/runtime-config/vimrc-global
 cat ~/.vimrc >> ~/.vim/runtime-config/vimrc-global
 echo "source ~/.vim/runtime-config/vimrc-global" > ~/.vimrc
-```
-
-Initialize the vim plugins:
-```bash
-git submodule init
 ```
 
 YouCompleteMe compilation
