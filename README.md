@@ -19,9 +19,7 @@ git clone git@bitbucket.org:roffe/vimconfig.git ~/.vim
 
 Initialize the vim plugins:
 ```bash
-cd .vim
-git submodule update --init --recursive --remote
-cd -
+cd .vim && git submodule update --init --recursive --remote && cd -
 ```
 
 Add the following to the top of ~/.vimrc
