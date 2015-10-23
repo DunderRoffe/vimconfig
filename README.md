@@ -9,7 +9,7 @@ INSTALL
 =======
 Install required programs
 ```bash
-sudo apt-get install vim git cmake python python-dev
+sudo apt-get install vim git gcc g++ cmake python python-dev
 ```
 
 Clone this repo in to your home folder and rename it to '.vim'
