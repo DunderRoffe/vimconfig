@@ -14,12 +14,12 @@ sudo apt-get install git
 
 Clone this repo in to your home folder and rename it to '.vim'
 ```bash
-git clone git@bitbucket.org:roffe/vimconfig.git ~/.vim
+git clone https://roffe@bitbucket.org/roffe/vimconfig.git ~/.vim
 ```
 
 Run setup script
 ```bash
-cd .vim && ./setup.sh && cd -
+cd .vim && bash setup.sh && cd -
 ```
 
 Maintain
