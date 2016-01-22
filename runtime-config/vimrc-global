@@ -1,5 +1,6 @@
 execute pathogen#infect()
 
+set linebreak
 set timeoutlen =150
 set laststatus =2
 
@@ -28,3 +29,18 @@ vmap <Leader>d "+d
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
+
+if has('gui_running')
+    set lines=999 columns=999
+    set background=dark
+    :colo solarized
+else
+    set background=light
+    :colo slate
+endif
+
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+set guifont=Monospace\ 10
