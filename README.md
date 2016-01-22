@@ -9,7 +9,7 @@ INSTALL
 =======
 Install required programs
 ```bash
-sudo apt-get install vim git gcc g++ cmake python python-dev
+sudo apt-get install git
 ```
 
 Clone this repo in to your home folder and rename it to '.vim'
@@ -17,21 +17,9 @@ Clone this repo in to your home folder and rename it to '.vim'
 git clone git@bitbucket.org:roffe/vimconfig.git ~/.vim
 ```
 
-Initialize the vim plugins:
+Run setup script
 ```bash
-cd .vim && git submodule update --init --recursive --remote && cd -
-```
-
-Add the following to the top of ~/.vimrc
-```bash
-echo "\n\n\" Old conf:" >> ~/.vim/runtime-config/vimrc-global
-cat ~/.vimrc >> ~/.vim/runtime-config/vimrc-global
-echo "source ~/.vim/runtime-config/vimrc-global" > ~/.vimrc
-```
-
-YouCompleteMe compilation
-```bash
-cd ~/.vim/bundle/YouCompleteMe/ && ./install.py && cd -
+cd .vim && ./setup.sh && cd -
 ```
 
 Maintain
