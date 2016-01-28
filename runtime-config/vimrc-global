@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+syntax on
+
 set linebreak
 set timeoutlen =150
 set laststatus =2
