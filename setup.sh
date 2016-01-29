@@ -5,10 +5,10 @@ sudo apt-get install vim gcc g++ cmake python python-dev
 # Initialize the vim plugins:
 git submodule update --init --recursive --remote 
 
-# Add the following to the top of ~/.vimrc
-echo "\n\n\" Old conf:" >> ~/.vim/runtime-config/vimrc-global
-cat ~/.vimrc >> ~/.vim/runtime-config/vimrc-global
+# Make .vim settings load
 echo "source ~/.vim/runtime-config/vimrc-global" > ~/.vimrc
+cat ~/.vimrc >> ~/.vim/runtime-config/vimrc-local
+echo "source ~/.vim/runtime-config/vimrc-local" > ~/.vimrc
 
 # YouCompleteMe compilation
 cd bundle/YouCompleteMe/

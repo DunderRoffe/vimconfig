@@ -25,11 +25,23 @@ cd .vim && bash setup.sh && cd -
 Maintain
 ========
 
-Updating vim config
----------------
+Local settings
+--------------
+Add local settings to the file ~/.vim/runtime-config/vimrc-local.
+This file is automatically loaded by the ~/.vimrc file. However,
+it is ignored by the git repository.
+```bash
+vim ~/.vim/runtime-config/vimrc-local
+```
+
+Updating global vim config
+--------------------------
 Inorder to assure that the changes are managed by git,
-all vim config that normaly is put in ~/.vimrc should be
-put in an appropriate file in /path-to-repo/runtime-config/
+all global vim config that normaly is put in ~/.vimrc should be
+put in ~/.vim/runtime-config/vimrc-globali
+```bash
+vim ~/.vim/runtime-config/vimrc-global
+```
 
 Update Plugins
 --------------

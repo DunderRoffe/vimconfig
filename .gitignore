@@ -2,3 +2,4 @@
 *.swo
 *.html
 .netrwhist
+runtime-config/vimrc-local
