@@ -19,6 +19,12 @@ set tabstop=2 shiftwidth=2 expandtab
 
 let mapleader = "<Space>"
 
+" Spelling
+set spelllang=en_us
+
+autocmd FileType tex setlocal spell
+autocmd FileType markdown setlocal spell
+
 " Quicksave
 nnoremap <Leader>w :w<CR>
 
