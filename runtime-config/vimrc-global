@@ -10,11 +10,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 set tabstop=2 shiftwidth=2 expandtab
 
 let mapleader = "<Space>"
@@ -36,15 +31,21 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 
 if has('gui_running')
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
     set lines=999 columns=999
     set background=dark
     :colo solarized
     let g:airline_theme='solarized'
-    let g:airline_powerline_fonts =1
 else
     set background=light
     :colo slate
 endif
+
+let g:airline_powerline_fonts =1
 
 set guioptions-=m
 set guioptions-=T
