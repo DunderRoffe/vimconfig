@@ -12,23 +12,11 @@ set statusline+=%*
 
 set tabstop=2 shiftwidth=2 expandtab
 
-let mapleader = "<Space>"
-
 " Spelling
 set spelllang=en_us
 
 autocmd FileType tex setlocal spell
 autocmd FileType markdown setlocal spell
-
-" Quicksave
-nnoremap <Leader>w :w<CR>
-
-" Quick copy and paste to/from system clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
 
 if has('gui_running')
     let g:syntastic_always_populate_loc_list = 1
@@ -41,7 +29,7 @@ if has('gui_running')
     :colo solarized
     let g:airline_theme='solarized'
 else
-    set background=light
+    let g:airline_theme='solarized'
     :colo slate
 endif
 
