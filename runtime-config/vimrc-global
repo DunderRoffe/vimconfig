@@ -6,9 +6,9 @@ set linebreak
 set timeoutlen =150
 set laststatus =2
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 set tabstop=2 shiftwidth=2 expandtab
 
@@ -18,6 +18,9 @@ set spelllang=en_us
 autocmd FileType tex setlocal spell
 autocmd FileType markdown setlocal spell
 
+:colo monokai
+
+" GVIM
 if has('gui_running')
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
@@ -26,11 +29,7 @@ if has('gui_running')
 
     set lines=999 columns=999
     set background=dark
-    :colo solarized
-    let g:airline_theme='solarized'
-else
-    let g:airline_theme='solarized'
-    :colo slate
+    let g:airline_theme='monokai'
 endif
 
 let g:airline_powerline_fonts =1
