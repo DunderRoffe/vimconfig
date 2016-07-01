@@ -18,7 +18,7 @@ set spelllang=en_us
 autocmd FileType tex setlocal spell
 autocmd FileType markdown setlocal spell
 
-:colo monokai
+:colo molokai
 
 " GVIM
 if has('gui_running')
@@ -28,8 +28,7 @@ if has('gui_running')
     let g:syntastic_check_on_wq = 0
 
     set lines=999 columns=999
-    set background=dark
-    let g:airline_theme='monokai'
+    let g:airline_theme='molokai'
 endif
 
 let g:airline_powerline_fonts =1
