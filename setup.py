@@ -28,23 +28,20 @@ def init():
     Installs dependencies and initializes the vimconf
     """
 
-    if os.system("sudo apt-get install vim gcc g++ cmake python") == 0:
-        if os.system("git submodule update --init --recursive") == 0:
-            this_dir = os.path.dirname(os.path.abspath(__file__))
-            home_dir, _  = os.path.split(this_dir)
-            vimrc_home   = os.path.join(home_dir, ".vimrc")
-            vimrc_global = os.path.join(this_dir, "runtime-config", "vimrc-global")
-            vimrc_local  = os.path.join(this_dir, "runtime-config", "vimrc-local")
+    if os.system("git submodule update --init --recursive") == 0:
+        this_dir = os.path.dirname(os.path.abspath(__file__))
+        home_dir, _  = os.path.split(this_dir)
+        vimrc_home   = os.path.join(home_dir, ".vimrc")
+        vimrc_global = os.path.join(this_dir, "runtime-config", "vimrc-global")
+        vimrc_local  = os.path.join(this_dir, "runtime-config", "vimrc-local")
 
-            copyfile(vimrc_home, os.path.join(vimrc_home, ".bak"))
+        copyfile(vimrc_home, os.path.join(vimrc_home, ".bak"))
 
-            with open(vimrc_home, mode="w") as f:
-                f.write("source {}", vimrc_global)
-                f.write("source {}", vimrc_local)
-        else:
-            print("Could not update git submodule, aborting...")
+        with open(vimrc_home, mode="w") as f:
+            f.write("source {}", vimrc_global)
+            f.write("source {}", vimrc_local)
     else:
-        print("Could not install required programs via apt-get, aborting...")
+        print("Could not update git submodule, aborting...")
 
 def update():
     """
