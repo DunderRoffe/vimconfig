@@ -28,20 +28,29 @@ def init():
     Installs dependencies and initializes the vimconf
     """
 
-    if os.system("git submodule update --init --recursive") == 0:
-        this_dir = os.path.dirname(os.path.abspath(__file__))
-        home_dir, _  = os.path.split(this_dir)
-        vimrc_home   = os.path.join(home_dir, ".vimrc")
-        vimrc_global = os.path.join(this_dir, "runtime-config", "vimrc-global")
-        vimrc_local  = os.path.join(this_dir, "runtime-config", "vimrc-local")
+    update()
 
-        copyfile(vimrc_home, os.path.join(vimrc_home, ".bak"))
+    this_dir = os.path.dirname(os.path.abspath(__file__))
+    home_dir, _  = os.path.split(this_dir)
+    vimrc_home   = os.path.join(home_dir, ".vimrc")
+    vimrc_global = os.path.join(this_dir, "runtime-config", "vimrc-global")
+    vimrc_local  = os.path.join(this_dir, "runtime-config", "vimrc-local")
 
+    copyfile(vimrc_home, os.path.join(vimrc_home, ".bak"))
+
+    try:
         with open(vimrc_home, mode="w") as f:
             f.write("source {}", vimrc_global)
             f.write("source {}", vimrc_local)
-    else:
-        print("Could not update git submodule, aborting...")
+    except:
+        raise Exception("Could not write load config to file '{}'".format(vimrc_home), e)
+
+    try:
+        with open(vimrc_local, mode="w") as f:
+            f.write('" Put computer specific vim setting in this file')
+            f.write('" Note that any settings set in this file overrides settings set in the global config')
+    except:
+        raise Exception("Could create '{}'".format(vimrc_home), e)
 
 
 def update():
@@ -49,11 +58,11 @@ def update():
     Update the vimconf to the latest upstream version
     """
 
-    if os.system("git pull -r origin master:master") != 0:
+    if os.system("git pull -r origin master") != 0:
        raise Exception("Could not pull from origin master to local master")
     
     if os.system("git submodule update --init --recursive") != 0:
-       raise Exception("Something went wrong when updating git plugins")
+       raise Exception("Something went wrong when updating the vim plugins (git submodules)")
 
 
 if __name__ == "__main__":
