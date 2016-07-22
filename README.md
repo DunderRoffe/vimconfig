@@ -16,7 +16,7 @@ Procedure
 ---------
 Clone this repo in to your home folder and rename it to '.vim'
 ```bash
-git clone https://roffe@bitbucket.org/roffe/vimconfig.git ~/.vim
+git clone https://github.com/DunderRoffe/vimconfig.git ~/.vim
 ```
 
 Run setup script
