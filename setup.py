@@ -25,7 +25,7 @@ def parseArgs():
 
 def init():
     """
-    Initializes the vimconf
+    Installs dependencies and initializes the vimconf
     """
 
     if os.system("sudo apt-get install vim gcc g++ cmake python") == 0:
@@ -51,7 +51,7 @@ def update():
     Update the vimconf to the latest upstream version
     """
 
-    success = os.system("git pull -r origin master && git submodule update --init --recursive")
+    success = os.system("git pull -r origin master:master && git submodule update --init --recursive")
     if success != 0:
        raise Exception("Something went wrong during update please fix")
 
@@ -59,5 +59,6 @@ def update():
 if __name__ == "__main__":
     try:
         parseArgs()
+        print("Success :D")
     except Exception as e:
         print(str(e))
