@@ -3,15 +3,10 @@ About
 These are my personal vim preferences which I originally forked
 from my friend [Simon Pedersen's repo](https://bitbucket.org/mustig/vimconfig).
 
-Feel free to copy or fork them if you find them appealing :)
+Feel free to copy or fork if you find this appealing :)
 
 INSTALL
 =======
-Install required programs
-```bash
-sudo apt-get install git
-```
-
 Clone this repo in to your home folder and rename it to '.vim'
 ```bash
 git clone https://roffe@bitbucket.org/roffe/vimconfig.git ~/.vim
@@ -19,7 +14,7 @@ git clone https://roffe@bitbucket.org/roffe/vimconfig.git ~/.vim
 
 Run setup script
 ```bash
-cd .vim && bash setup.sh && cd -
+cd .vim && ./setup.py init && cd -
 ```
 
 Maintain
@@ -43,8 +38,6 @@ put in ~/.vim/runtime-config/vimrc-globali
 vim ~/.vim/runtime-config/vimrc-global
 ```
 
-Update Plugins
---------------
-```bash
-git submodule foreach git pull origin master
-```
+LICENSE
+=======
+See license file
