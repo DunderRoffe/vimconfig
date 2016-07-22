@@ -5,7 +5,7 @@ from my friend [Simon Pedersen's repo](https://bitbucket.org/mustig/vimconfig).
 
 Feel free to copy or fork if you find this appealing :)
 
-INSTALL
+Install
 =======
 Clone this repo in to your home folder and rename it to '.vim'
 ```bash
@@ -38,6 +38,6 @@ put in ~/.vim/runtime-config/vimrc-globali
 vim ~/.vim/runtime-config/vimrc-global
 ```
 
-LICENSE
+License
 =======
 See license file
