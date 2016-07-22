@@ -10,20 +10,15 @@ def parseArgs():
     """
 
     INIT = "init"
-    CHECK_UPDATE = "check_update"
     UPDATE = "update"
 
     parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('command', choices=[INIT, CHECK_UPDATE, UPDATE],
+    parser.add_argument('command', choices=[INIT, UPDATE],
                         help='Which what command to execute')
 
     args = parser.parse_args()
     if args.command == INIT:
         init()
-    elif args.command == CHECK_UPDATE:
-        new_version_exists = check_update()
-        if new_version_exists:
-            ask_update()
     elif args.command == UPDATE:
         update()
 
@@ -51,33 +46,18 @@ def init():
     else:
         print("Could not install required programs via apt-get, aborting...")
 
-def check_update():
-    """
-    Check if there is an avaliable update from the upstream git repo
-    """
-
-    pull_ok = os.system("git pull -r origin master")
-    return False
-
-def ask_update():
-    """
-    Ask if the vimconf should be updated to the latest version
-    """
-
-    print("New version found!")
-    answer = input("Do you want to update?(Y/n): ")
-    if not answer.to_lower() == "n":
-        update()
-
 def update():
     """
     Update the vimconf to the latest upstream version
     """
 
-    os.system("git pull -r origin master && git submodule update --init --recursive")
+    success = os.system("git pull -r origin master && git submodule update --init --recursive")
+    if success != 0:
+       raise Exception("Something went wrong during update please fix")
 
 
 if __name__ == "__main__":
-    parseArgs()
-
-
+    try:
+        parseArgs()
+    except Exception as e:
+        print(str(e))
