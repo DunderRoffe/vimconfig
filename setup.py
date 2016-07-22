@@ -12,7 +12,7 @@ def parseArgs():
     INIT = "init"
     UPDATE = "update"
 
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser(description='Tool for managing the vimconfig.')
     parser.add_argument('command', choices=[INIT, UPDATE],
                         help='Which what command to execute')
 
@@ -43,14 +43,17 @@ def init():
     else:
         print("Could not update git submodule, aborting...")
 
+
 def update():
     """
     Update the vimconf to the latest upstream version
     """
 
-    success = os.system("git pull -r origin master:master && git submodule update --init --recursive")
-    if success != 0:
-       raise Exception("Something went wrong during update please fix")
+    if os.system("git pull -r origin master:master") != 0:
+       raise Exception("Could not pull from origin master to local master")
+    
+    if os.system("git submodule update --init --recursive") != 0:
+       raise Exception("Something went wrong when updating git plugins")
 
 
 if __name__ == "__main__":
