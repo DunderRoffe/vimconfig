@@ -40,8 +40,8 @@ def init():
 
     try:
         with open(vimrc_home, mode="w") as f:
-            f.write("source {}".format(vimrc_global))
-            f.write("source {}".format(vimrc_local))
+            f.write("source {}\n".format(vimrc_global))
+            f.write("source {}\n".format(vimrc_local))
     except Exception as e:
         raise Exception("Could not write load config to file '{}'".format(vimrc_home), e)
 
