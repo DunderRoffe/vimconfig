@@ -36,20 +36,20 @@ def init():
     vimrc_global = os.path.join(this_dir, "runtime-config", "vimrc-global")
     vimrc_local  = os.path.join(this_dir, "runtime-config", "vimrc-local")
 
-    copyfile(vimrc_home, os.path.join(vimrc_home, ".bak"))
+    copyfile(vimrc_home, vimrc_home + ".bak")
 
     try:
         with open(vimrc_home, mode="w") as f:
-            f.write("source {}", vimrc_global)
-            f.write("source {}", vimrc_local)
-    except:
+            f.write("source {}".format(vimrc_global))
+            f.write("source {}".format(vimrc_local))
+    except Exception as e:
         raise Exception("Could not write load config to file '{}'".format(vimrc_home), e)
 
     try:
         with open(vimrc_local, mode="w") as f:
             f.write('" Put computer specific vim setting in this file')
             f.write('" Note that any settings set in this file overrides settings set in the global config')
-    except:
+    except Exception as e:
         raise Exception("Could create '{}'".format(vimrc_home), e)
 
 
