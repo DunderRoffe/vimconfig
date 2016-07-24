@@ -47,8 +47,8 @@ def init():
 
     try:
         with open(vimrc_local, mode="w") as f:
-            f.write('" Put computer specific vim setting in this file')
-            f.write('" Note that any settings set in this file overrides settings set in the global config')
+            f.write('" Put computer specific vim setting in this file\n')
+            f.write('" Note that any settings set in this file overrides settings set in the global config\n')
     except Exception as e:
         raise Exception("Could create '{}'".format(vimrc_home), e)
 
