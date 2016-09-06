@@ -36,7 +36,8 @@ def init():
     vimrc_global = os.path.join(this_dir, "runtime-config", "vimrc-global")
     vimrc_local  = os.path.join(this_dir, "runtime-config", "vimrc-local")
 
-    copyfile(vimrc_home, vimrc_home + ".bak")
+    if os.path.exists(vimrc_home):
+        copyfile(vimrc_home, vimrc_home + ".bak")
 
     try:
         with open(vimrc_home, mode="w") as f:
