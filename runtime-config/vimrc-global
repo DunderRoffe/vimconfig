@@ -18,6 +18,8 @@ set spelllang=en_us
 autocmd FileType tex setlocal spell
 autocmd FileType markdown setlocal spell
 
+cmap w!! %!sudo tee > /dev/null %
+
 :colo molokai
 
 " GVIM
