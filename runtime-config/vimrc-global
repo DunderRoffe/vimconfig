@@ -20,7 +20,6 @@ autocmd FileType markdown setlocal spell
 
 cmap w!! %!sudo tee > /dev/null %
 
-:colo molokai
 
 " GVIM
 if has('gui_running')
@@ -30,7 +29,6 @@ if has('gui_running')
     let g:syntastic_check_on_wq = 0
 
     set lines=999 columns=999
-    let g:airline_theme='molokai'
 endif
 
 let g:airline_powerline_fonts =1
