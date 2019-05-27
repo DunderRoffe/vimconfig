@@ -6,35 +6,14 @@ set linebreak
 set timeoutlen =150
 set laststatus =2
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+" Textediting
 
-set tabstop=2 shiftwidth=2 expandtab
-
-" Spelling
 set spelllang=en_us
 
-autocmd FileType tex setlocal spell
-autocmd FileType markdown setlocal spell
+function SetTextMode()
+	setlocal spell
+	setlocal textwidth=80
+endfunc
 
-cmap w!! %!sudo tee > /dev/null %
-
-
-" GVIM
-if has('gui_running')
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-
-    set lines=999 columns=999
-endif
-
-let g:airline_powerline_fonts =1
-
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-set guifont=Monospace\ 10
+autocmd FileType tex call SetTextMode()
+autocmd FileType markdown call SetTextMode()
