@@ -10,9 +10,9 @@ set laststatus =2
 
 set spelllang=en_us
 
-function SetTextMode()
-	setlocal spell
-	setlocal textwidth=80
+function SetTextMode(width = 80)
+	let &l:spell=1
+	let &l:textwidth=a:width
 endfunc
 
 autocmd FileType tex call SetTextMode()
