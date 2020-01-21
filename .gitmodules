@@ -31,3 +31,6 @@
 [submodule "bundle/vim-gdscript"]
 	path = bundle/vim-gdscript
 	url = git@github.com:quabug/vim-gdscript.git
+[submodule "bundle/editorconfig-vim"]
+	path = bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
