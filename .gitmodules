@@ -7,9 +7,6 @@
 [submodule "bundle/vim-bufferline"]
 	path = bundle/vim-bufferline
 	url = https://github.com/bling/vim-bufferline.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale
