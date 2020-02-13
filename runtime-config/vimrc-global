@@ -18,3 +18,5 @@ endfunc
 autocmd FileType tex call SetTextMode()
 autocmd FileType markdown call SetTextMode()
 autocmd FileType gitcommit call SetTextMode(72)
+
+colorscheme elflord
