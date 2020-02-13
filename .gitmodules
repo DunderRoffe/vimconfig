@@ -1,9 +1,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/quick-scope"]
-	path = bundle/quick-scope
-	url = https://github.com/unblevable/quick-scope
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
